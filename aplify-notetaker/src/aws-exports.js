@@ -8,7 +8,10 @@ const awsmobile = {
     "aws_user_pools_web_client_id": "6v03932b7ihlhvhrl8mfpso3n1",
     "aws_appsync_graphqlEndpoint": "https://dgf6e7reenaupmbpvpesncuqge.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
-    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS"
+    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
+    "aws_content_delivery_bucket": "aplifynotetaker-20191125113432-hostingbucket",
+    "aws_content_delivery_bucket_region": "us-east-1",
+    "aws_content_delivery_url": "http://aplifynotetaker-20191125113432-hostingbucket.s3-website-us-east-1.amazonaws.com"
 };
 
 
