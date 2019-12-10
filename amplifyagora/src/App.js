@@ -46,12 +46,21 @@ const App = () => {
     }
   }
 
+  const handleSignout = async () => {
+    try {
+      Auth.signOut()
+    }
+    catch (e) {
+      console.error('Error signing out user', e)
+    }
+  }
+
 
 
   return state.user ? (
     <Router>
       <>
-        <NavBar user={state.user} />
+        <NavBar user={state.user} handleSignout={handleSignout} />
         <div className='app-container' >
           <Route exact path='/' component={HomePage} />
           <Route path='/profile' component={ProfilePage} />
