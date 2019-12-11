@@ -1,5 +1,5 @@
 import React from "react";
-import NewMarket from './MarketPage'
+import NewMarket from '../components/NewMarket'
 import MarketList from '../components/MarketList'
 import MarketPage from "./MarketPage";
 
@@ -9,7 +9,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <>
-        <MarketPage />
+        <NewMarket />
         <MarketList />
       </>
     )
