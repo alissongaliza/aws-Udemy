@@ -9,9 +9,12 @@ import ProfilePage from './pages/ProfilePage'
 import MarketPage from './pages/MarketPage'
 import NavBar from './components/Navbar'
 
+export const UserContext = React.createContext()
+
 const App = () => {
 
   const [state, setState] = useState({ user: null })
+
 
   const getUserData = async () => {
     const authUser = await Auth.currentAuthenticatedUser()
@@ -58,16 +61,18 @@ const App = () => {
 
 
   return state.user ? (
-    <Router>
-      <>
-        <NavBar user={state.user} handleSignout={handleSignout} />
-        <div className='app-container' >
-          <Route exact path='/' component={HomePage} />
-          <Route path='/profile' component={ProfilePage} />
-          <Route path='/markets/:marketId' component={({ match: { params: { marketId } } }) => <MarketPage marketId={marketId} />} />
-        </div>
-      </>
-    </Router>
+    <UserContext.Provider value={{ user: state.user }}>
+      <Router>
+        <>
+          <NavBar user={state.user} handleSignout={handleSignout} />
+          <div className='app-container' >
+            <Route exact path='/' component={HomePage} />
+            <Route path='/profile' component={ProfilePage} />
+            <Route path='/markets/:marketId' component={({ match: { params: { marketId } } }) => <MarketPage marketId={marketId} />} />
+          </div>
+        </>
+      </Router>
+    </UserContext.Provider >
   ) : <Authenticator theme={theme} />;
 }
 
