@@ -1,8 +1,11 @@
-// eslint-disable
+/* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createMarket = `mutation CreateMarket($input: CreateMarketInput!) {
-  createMarket(input: $input) {
+export const createMarket = `mutation CreateMarket(
+  $input: CreateMarketInput!
+  $condition: ModelMarketConditionInput
+) {
+  createMarket(input: $input, condition: $condition) {
     id
     name
     tags
@@ -22,8 +25,11 @@ export const createMarket = `mutation CreateMarket($input: CreateMarketInput!) {
   }
 }
 `;
-export const updateMarket = `mutation UpdateMarket($input: UpdateMarketInput!) {
-  updateMarket(input: $input) {
+export const updateMarket = `mutation UpdateMarket(
+  $input: UpdateMarketInput!
+  $condition: ModelMarketConditionInput
+) {
+  updateMarket(input: $input, condition: $condition) {
     id
     name
     tags
@@ -43,8 +49,11 @@ export const updateMarket = `mutation UpdateMarket($input: UpdateMarketInput!) {
   }
 }
 `;
-export const deleteMarket = `mutation DeleteMarket($input: DeleteMarketInput!) {
-  deleteMarket(input: $input) {
+export const deleteMarket = `mutation DeleteMarket(
+  $input: DeleteMarketInput!
+  $condition: ModelMarketConditionInput
+) {
+  deleteMarket(input: $input, condition: $condition) {
     id
     name
     tags
@@ -64,8 +73,11 @@ export const deleteMarket = `mutation DeleteMarket($input: DeleteMarketInput!) {
   }
 }
 `;
-export const createProduct = `mutation CreateProduct($input: CreateProductInput!) {
-  createProduct(input: $input) {
+export const createProduct = `mutation CreateProduct(
+  $input: CreateProductInput!
+  $condition: ModelProductConditionInput
+) {
+  createProduct(input: $input, condition: $condition) {
     id
     description
     file {
@@ -90,8 +102,11 @@ export const createProduct = `mutation CreateProduct($input: CreateProductInput!
   }
 }
 `;
-export const updateProduct = `mutation UpdateProduct($input: UpdateProductInput!) {
-  updateProduct(input: $input) {
+export const updateProduct = `mutation UpdateProduct(
+  $input: UpdateProductInput!
+  $condition: ModelProductConditionInput
+) {
+  updateProduct(input: $input, condition: $condition) {
     id
     description
     file {
@@ -116,8 +131,11 @@ export const updateProduct = `mutation UpdateProduct($input: UpdateProductInput!
   }
 }
 `;
-export const deleteProduct = `mutation DeleteProduct($input: DeleteProductInput!) {
-  deleteProduct(input: $input) {
+export const deleteProduct = `mutation DeleteProduct(
+  $input: DeleteProductInput!
+  $condition: ModelProductConditionInput
+) {
+  deleteProduct(input: $input, condition: $condition) {
     id
     description
     file {
@@ -142,8 +160,11 @@ export const deleteProduct = `mutation DeleteProduct($input: DeleteProductInput!
   }
 }
 `;
-export const registerUser = `mutation RegisterUser($input: CreateUserInput!) {
-  registerUser(input: $input) {
+export const registerUser = `mutation RegisterUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  registerUser(input: $input, condition: $condition) {
     id
     username
     email
@@ -158,8 +179,11 @@ export const registerUser = `mutation RegisterUser($input: CreateUserInput!) {
   }
 }
 `;
-export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
-  updateUser(input: $input) {
+export const updateUser = `mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
     id
     username
     email
@@ -174,8 +198,11 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
   }
 }
 `;
-export const createOrder = `mutation CreateOrder($input: CreateOrderInput!) {
-  createOrder(input: $input) {
+export const createOrder = `mutation CreateOrder(
+  $input: CreateOrderInput!
+  $condition: ModelOrderConditionInput
+) {
+  createOrder(input: $input, condition: $condition) {
     id
     user {
       id

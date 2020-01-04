@@ -1,4 +1,4 @@
-// eslint-disable
+/* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
 export const getMarket = `query GetMarket($id: ID!) {
@@ -118,7 +118,7 @@ export const searchMarkets = `query SearchMarkets(
   $filter: SearchableMarketFilterInput
   $sort: SearchableMarketSortInput
   $limit: Int
-  $nextToken: Int
+  $nextToken: String
 ) {
   searchMarkets(
     filter: $filter
@@ -137,6 +137,7 @@ export const searchMarkets = `query SearchMarkets(
       }
     }
     nextToken
+    total
   }
 }
 `;

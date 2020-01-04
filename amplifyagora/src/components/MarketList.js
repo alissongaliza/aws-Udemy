@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom'
 
 import { Loading, Card, Icon, Tag } from "element-react";
 
-const MarketList = () => {
-  const onNewMarket = (prev, newQuery) => {
+const MarketList = props => {
+  const onNewMarket = (prev, newData) => {
     let updatedQuery = { ...prev }
-    const newMarketList = [newQuery.onCreateMarket, ...prev.listMarkets.items]
-    updatedQuery.listMarkets.item = newMarketList
+    const newMarketList = [newData.onCreateMarket, ...prev.listMarkets.items]
+    updatedQuery.listMarkets.items = newMarketList
     return updatedQuery
 
   }
@@ -24,14 +24,22 @@ const MarketList = () => {
       {({ data, loading, errors }) => {
         if (errors.length > 0) return <Error errors={errors} />
         if (loading || !data.listMarkets) return <Loading fullscreen={true} />
+        const markets = props.searchResults.length > 0 ? props.searchResults : data.listMarkets.items
 
         return (
           <>
-            <h2 className='header'>
-              <img src='https://icon.now.sh/store_mall_directory/527fff' alt='Store Icon' className='large-icon' />
-              Markets
+            {props.searchResults.length > 0 ?
+              <h2 className='text-green'>
+                <icon type='success' name='check' className='icon' />
+                {props.searchResults.length} Results
+              </h2> :
+
+              <h2 className='header'>
+                <img src='https://icon.now.sh/store_mall_directory/527fff' alt='Store Icon' className='large-icon' />
+                Markets
             </h2>
-            {data.listMarkets.items.map(market => (
+            }
+            {markets.map(market => (
               <div className='my-2' key={market.id}>
                 <Card
                   bodyStyle={{

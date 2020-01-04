@@ -32,7 +32,7 @@ const App = () => {
 
   const onAuthEvent = payload => {
     switch (payload.event) {
-      case 'signin':
+      case 'signIn':
         console.log('signed in');
         getUserData()
         break;
@@ -68,7 +68,7 @@ const App = () => {
           <div className='app-container' >
             <Route exact path='/' component={HomePage} />
             <Route path='/profile' component={ProfilePage} />
-            <Route path='/markets/:marketId' component={({ match: { params: { marketId } } }) => <MarketPage marketId={marketId} />} />
+            <Route path='/markets/:marketId' component={({ match: { params: { marketId } } }) => <MarketPage user={state.user} marketId={marketId} />} />
           </div>
         </>
       </Router>

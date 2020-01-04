@@ -46,7 +46,22 @@ const NewMarket = props => {
             Create Your Marketplace
             <Button type='text' icon='edit' className='market-title-button' onClick={() => setDialogState(true)} />
           </h1>
+
+          <Form inline={true} onSubmit={props.handleSearch}>
+            <Form.Item>
+              <Input
+                placeholder='Search Markets'
+                icon='circle-cross'
+                value={props.searchTerm}
+                onChange={props.handleSearchChange}
+                onIconClick={props.handleClearSearch} />
+            </Form.Item>
+            <Form.Item>
+              <Button type='info' icon='search' loading={props.isSearching} onClick={props.handleSearch}></Button>
+            </Form.Item>
+          </Form>
         </div>
+
         <Dialog
           title='Create New Market'
           visible={dialogState}

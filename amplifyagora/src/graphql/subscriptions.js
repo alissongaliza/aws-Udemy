@@ -1,4 +1,4 @@
-// eslint-disable
+/* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
 export const onCreateMarket = `subscription OnCreateMarket {
@@ -64,8 +64,8 @@ export const onDeleteMarket = `subscription OnDeleteMarket {
   }
 }
 `;
-export const onCreateProduct = `subscription OnCreateProduct {
-  onCreateProduct {
+export const onCreateProduct = `subscription OnCreateProduct($owner: String!) {
+  onCreateProduct(owner: $owner) {
     id
     description
     file {
@@ -90,8 +90,8 @@ export const onCreateProduct = `subscription OnCreateProduct {
   }
 }
 `;
-export const onUpdateProduct = `subscription OnUpdateProduct {
-  onUpdateProduct {
+export const onUpdateProduct = `subscription OnUpdateProduct($owner: String!) {
+  onUpdateProduct(owner: $owner) {
     id
     description
     file {
@@ -116,8 +116,8 @@ export const onUpdateProduct = `subscription OnUpdateProduct {
   }
 }
 `;
-export const onDeleteProduct = `subscription OnDeleteProduct {
-  onDeleteProduct {
+export const onDeleteProduct = `subscription OnDeleteProduct($owner: String!) {
+  onDeleteProduct(owner: $owner) {
     id
     description
     file {
